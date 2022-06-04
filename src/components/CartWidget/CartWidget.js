@@ -1,4 +1,4 @@
-import '../../App.css';
+import '../../css/style.css';
 
 const CartWidget = () =>{
     return(

@@ -1,4 +1,4 @@
-import './App.css';
+import './css/style.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
@@ -10,7 +10,7 @@ function App() {
         <NavBar/>
       </header>
 
-      <ItemListContainer greeting = {"PAGINA PRINCIPAL"}/>
+      <ItemListContainer/>
     </main>
   );
 }

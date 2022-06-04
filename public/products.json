@@ -1,0 +1,40 @@
+{
+    "mantas":[
+        {
+            "id": 1,
+            "image": "assets/images/mantaAmarilla.jpg",
+            "name": "Manta amarilla",
+            "price": 5000
+        },
+        {
+            "id": 2,
+            "image": "assets/images/mantaBison.jpg",
+            "name": "Manta bison",
+            "price": 4200
+        },
+        {
+            "id": 3,
+            "image": "assets/images/mantaBisonClaro.jpg",
+            "name": "Manta bison claro",
+            "price": 4200
+        },
+        {
+            "id": 4,
+            "image": "assets/images/mantaGris.jpg",
+            "name": "Manta gris",
+            "price": 4500
+        },
+        {
+            "id": 55,
+            "image": "assets/images/mantaRosa.jpg",
+            "name": "Manta rosa",
+            "price": 5500
+        },
+        {
+            "id": 6,
+            "image": "assets/images/mantaVerdeAgua.jpg",
+            "name": "Manta verde agua",
+            "price": 5000
+        }
+    ]
+}
