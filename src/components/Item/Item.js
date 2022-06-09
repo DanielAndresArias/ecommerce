@@ -6,13 +6,15 @@ const Item = (props) => {
     
 
     return(
-        <div>
+        <div className="card">
             <div>
                 <img src={props.image}/>
             </div>
-            <span>{props.price}</span>
-            <p>{props.name}</p>
-            <ItemCount initial={1} stock={5}/>
+            <div className="info">
+                <span>{props.price}</span>
+                <p>{props.name}</p>
+                <ItemCount initial={1} stock={5}/>
+            </div>
         </div>
     )
 }

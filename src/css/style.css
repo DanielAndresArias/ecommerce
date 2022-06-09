@@ -8,18 +8,22 @@
 .header {
   background-color: #FAF6E7;
   color: #D8B33B;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 500;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   height: 120px;
   position: sticky;
-  top: 0; }
-  .header div {
-    margin-left: 50px; }
-    .header div img {
-      width: 120px; }
+  top: 0;
+  border-bottom: 1px solid #EDDEAD; }
+
+.logo {
+  margin-left: 50px; }
+  .logo img {
+    cursor: pointer;
+    width: 120px; }
 
 .navBar {
   display: flex;
@@ -37,14 +41,24 @@
   .menu--desktop li {
     display: inline-block;
     margin: 0 10px;
-    position: relative; }
-    .menu--desktop li:hover .submenu {
-      display: block;
-      background-color: #FAF6E7;
-      padding: 5px 0;
-      top: 73px;
-      left: -22px;
-      text-align: left; }
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid #FAF6E7; }
+    .menu--desktop li:hover {
+      border-color: #D8B33B; }
+      .menu--desktop li:hover .submenu {
+        display: block;
+        background-color: #FAF6E7;
+        padding: 48px 0 0;
+        top: 22px;
+        left: -22px;
+        text-align: left; }
+
+.cartWidget {
+  margin: 0 10px; }
+  .cartWidget img {
+    width: 34px;
+    cursor: pointer; }
 
 .submenu {
   display: none;
@@ -52,4 +66,41 @@
   text-transform: capitalize;
   position: absolute; }
   .submenu li {
-    padding: 5px 15px; }
+    display: block;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid #FAF6E7;
+    margin: 0; }
+    .submenu li:hover {
+      border-color: #EDDEAD; }
+
+.home {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #FAF6E7; }
+  .home h2 {
+    margin: 50px 0 25px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #D8B33B;
+    font-size: 24px;
+    font-weight: 600; }
+
+.mantas {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin-bottom: 50px; }
+
+.card {
+  overflow: hidden;
+  margin: 20px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #EDDEAD; }
+  .card div img {
+    width: 250px; }
+  .card .info {
+    padding: 15px; }

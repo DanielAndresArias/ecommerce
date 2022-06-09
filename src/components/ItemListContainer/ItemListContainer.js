@@ -12,7 +12,7 @@ const ItemListContainer = (props) => {
     }, []);
 
     return(
-        <section className='section'>
+        <section className={props.tipo}>
             <ItemList products={products}/>
         </section>
     )

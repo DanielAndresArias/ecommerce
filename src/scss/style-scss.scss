@@ -13,12 +13,14 @@ $color-background-white: #F3F3F3;
 $color-font: #070603;
 $color-background-footer: #070603;
 $color-font-header: #D8B33B;
+$color-font-header-light: #EDDEAD;
 $color-border-cart: #817E75;
 
 .header{
     background-color: $color-background;
     color: $color-font-header;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 500;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -26,12 +28,14 @@ $color-border-cart: #817E75;
     height: 120px;
     position: sticky;
     top: 0;
+    border-bottom: 1px solid $color-font-header-light;
+}
 
-    div{
-        margin-left: 50px;
-        img{
-            width: 120px;
-        }
+.logo{
+    margin-left: 50px;
+    img{
+        cursor: pointer;
+        width: 120px;
     }
 }
 
@@ -54,13 +58,17 @@ $color-border-cart: #817E75;
         display: inline-block;
         margin: 0 10px;
         position: relative;
+        cursor: pointer;
+        border-bottom: 1px solid $color-background;
 
         &:hover{
+            border-color: $color-font-header;
+            
             .submenu{
                 display: block;
                 background-color: $color-background;
-                padding: 5px 0;
-                top: 73px;
+                padding: 48px 0 0;
+                top: 22px;
                 left: -22px;
                 text-align: left;
             }
@@ -70,6 +78,14 @@ $color-border-cart: #817E75;
 
 }
 
+.cartWidget{
+    margin: 0 10px;
+    img{
+        width: 34px;
+        cursor: pointer;
+    }
+}
+
 .submenu{
     display: none;
     list-style-type: none;
@@ -77,6 +93,55 @@ $color-border-cart: #817E75;
     position: absolute;
 
     li{
-        padding: 5px 15px;
+        display: block;
+        padding: 10px 15px;
+        cursor: pointer;
+        border: 1px solid $color-background;
+        margin: 0;
+
+        &:hover{
+            border-color: $color-font-header-light;
+        }
+    }
+}
+
+.home{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: $color-background;
+
+    h2{
+        margin: 50px 0 25px;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-font-header;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
+
+.mantas{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin-bottom: 50px;
+}
+
+.card{
+    overflow: hidden;
+    margin: 20px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid $color-font-header-light;
+    div{
+        img{
+            width: 250px;
+        }
+    }
+    
+    .info{
+        padding: 15px;
     }
 }
