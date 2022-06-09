@@ -3,83 +3,53 @@
   padding: 0;
   box-sizing: border-box; }
 
-main {
+/* VARIABLES */
+/* Paleta de Colores */
+.header {
+  background-color: #FAF6E7;
+  color: #D8B33B;
+  font-size: 20px;
   display: flex;
-  flex-flow: column nowrap;
-  background-color: #fffefd; }
-  main header {
-    display: flex;
-    flex-flow: row nowrap;
-    position: sticky;
-    top: 0px;
-    justify-content: space-between;
-    border-bottom: 1px solid #e0c673;
-    background-color: #fffcf2; }
-    main header div {
-      margin: 0 50px;
-      cursor: pointer; }
-      main header div img {
-        width: 150px; }
-    main header nav {
-      display: flex;
-      flex-flow: row nowrap; }
-      main header nav ul {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        list-style-type: none; }
-        main header nav ul li {
-          text-transform: uppercase;
-          font-size: 20px;
-          padding: 10px 15px;
-          color: #e2b727;
-          cursor: pointer;
-          transition: scale, 0.25s; }
-          main header nav ul li ul {
-            display: none; }
-          main header nav ul li:hover {
-            transform: scale(1.05); }
-  main section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-self: center;
-    margin: 50px 0;
-    max-width: 1000px; }
-    main section div {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      overflow: hidden;
-      height: 350px;
-      margin: 20px;
-      border: 1px solid #9e9e9d;
-      border-radius: 5px; }
-      main section div div {
-        border: none;
-        margin: 0;
-        overflow: visible; }
-        main section div div img {
-          width: 250px; }
-      main section div span {
-        margin: 0 15px;
-        font-size: 25px; }
-      main section div p {
-        margin: 0 15px;
-        font-size: 15px; }
-      main section div div {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0; }
-        main section div div button {
-          font-size: 15px;
-          padding: 0 5px;
-          background-color: #f3f3f3;
-          border: 1px solid #9e9e9d;
-          cursor: pointer; }
-        main section div div span {
-          font-size: 15px;
-          padding: 0 5px;
-          margin: 0; }
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  position: sticky;
+  top: 0; }
+  .header div {
+    margin-left: 50px; }
+    .header div img {
+      width: 120px; }
+
+.navBar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around; }
+
+.menu--desktop {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  text-transform: uppercase; }
+  .menu--desktop li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative; }
+    .menu--desktop li:hover .submenu {
+      display: block;
+      background-color: #FAF6E7;
+      padding: 5px 0;
+      top: 73px;
+      left: -22px;
+      text-align: left; }
+
+.submenu {
+  display: none;
+  list-style-type: none;
+  text-transform: capitalize;
+  position: absolute; }
+  .submenu li {
+    padding: 5px 15px; }

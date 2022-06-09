@@ -5,7 +5,7 @@ import Menu from '../Menu/Menu';
 
 const NavBar = () => {
     return(
-        <nav className='nav'>
+        <nav className='navBar'>
           <Menu pages={["inicio", "productos", "sobre nosotros", "ayuda", "contacto"]}
                 products={["almohadones", "mantas", "mates", "tazas"]}
                 cartWidget={CartWidget}/>

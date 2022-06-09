@@ -1,13 +1,17 @@
 import './css/style.css';
 import Header from './components/Header/Header';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Home from './components/Home/Home';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <main>
+    <BrowserRouter>
       <Header/>
-      <ItemListContainer/>
-    </main>
+      <Routes>
+        <Route path='/' element={ <Home/> }/>
+      </Routes>
+    </BrowserRouter>
+    
   );
 }
 
