@@ -11,9 +11,9 @@ const Item = (props) => {
                 <img src={props.image}/>
             </div>
             <div className="info">
-                <span>{props.price}</span>
+                <span className="price">{props.price}</span>
                 <p>{props.name}</p>
-                <ItemCount initial={1} stock={5}/>
+                <ItemCount initial={0} stock={5}/>
             </div>
         </div>
     )

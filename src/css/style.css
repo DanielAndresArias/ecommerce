@@ -5,10 +5,32 @@
 
 /* VARIABLES */
 /* Paleta de Colores */
+/* Scrollbar Personalizada */
+body::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: #FAF6E7; }
+
+body::-webkit-scrollbar:vertical {
+  width: 10px; }
+
+body::-webkit-scrollbar-button:increment, body::-webkit-scrollbar-button {
+  display: none; }
+
+body::-webkit-scrollbar:horizontal {
+  height: 10px; }
+
+body::-webkit-scrollbar-thumb {
+  background-color: #a7a39a;
+  border-radius: 20px;
+  border: 2px solid #fff8e2; }
+
+body::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* HEADER */
 .header {
-  background-color: #FAF6E7;
-  color: #D8B33B;
-  font-size: 16px;
+  background-color: #fff8e2;
+  font-size: 18px;
   font-weight: 500;
   display: flex;
   flex-flow: row nowrap;
@@ -17,6 +39,7 @@
   height: 120px;
   position: sticky;
   top: 0;
+  z-index: 500;
   border-bottom: 1px solid #EDDEAD; }
 
 .logo {
@@ -29,7 +52,8 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-right: 50px; }
 
 .menu--desktop {
   display: flex;
@@ -44,13 +68,18 @@
     position: relative;
     cursor: pointer;
     border-bottom: 1px solid #FAF6E7; }
+    .menu--desktop li a {
+      display: block;
+      text-decoration: none;
+      color: #D8B33B; }
     .menu--desktop li:hover {
       border-color: #D8B33B; }
       .menu--desktop li:hover .submenu {
         display: block;
-        background-color: #FAF6E7;
-        padding: 48px 0 0;
-        top: 22px;
+        background-color: #fff8e2;
+        color: #D8B33B;
+        padding: 47px 0 0;
+        top: 25px;
         left: -22px;
         text-align: left; }
 
@@ -69,7 +98,7 @@
     display: block;
     padding: 10px 15px;
     cursor: pointer;
-    border: 1px solid #FAF6E7;
+    border: 1px solid #fff8e2;
     margin: 0; }
     .submenu li:hover {
       border-color: #EDDEAD; }
@@ -84,13 +113,14 @@
     text-transform: uppercase;
     text-align: center;
     color: #D8B33B;
-    font-size: 24px;
-    font-weight: 600; }
+    font-size: 32px;
+    font-weight: 600;
+    border-bottom: 2px solid #D8B33B; }
 
 .mantas {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   max-width: 1000px;
   margin-bottom: 50px; }
 
@@ -99,8 +129,57 @@
   margin: 20px;
   width: 250px;
   border-radius: 5px;
-  border: 1px solid #EDDEAD; }
+  border: 1px solid #EDDEAD;
+  background-color: #F5F5F5;
+  transition: 0.75s, scale; }
   .card div img {
     width: 250px; }
   .card .info {
-    padding: 15px; }
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: space-around;
+    padding: 0 15px 10px;
+    height: 120px;
+    color: #838078; }
+    .card .info .price {
+      font-size: 24px; }
+      .card .info .price::before {
+        content: "$ "; }
+    .card .info .count {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      height: 30px;
+      align-self: center; }
+      .card .info .count button {
+        cursor: pointer;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        border: none;
+        color: #D8B33B; }
+      .card .info .count .addToCart {
+        cursor: pointer;
+        padding: 1px;
+        width: 150px;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        border: 1px solid #EDDEAD;
+        color: #D8B33B; }
+        .card .info .count .addToCart img {
+          width: 18px;
+          margin-right: 5px; }
+      .card .info .count span {
+        height: 100%;
+        font-size: 18px;
+        padding: 0 15px;
+        background-color: #F5F5F5; }
+  .card:hover {
+    transform: scale(1.05); }
