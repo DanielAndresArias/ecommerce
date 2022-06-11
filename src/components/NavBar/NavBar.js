@@ -7,12 +7,10 @@ const NavBar = () => {
     return(
         <nav className='navBar'>
           <Menu pages={["inicio", "productos", "sobre nosotros", "ayuda", "contacto"]}
-                products={["almohadones", "mantas", "mates", "tazas"]}
+                products={["mantas", "mates", "tazas"]}
                 cartWidget={CartWidget}/>
         </nav>
     )
 }
-
-console.log(NavBar());
 
 export default NavBar;

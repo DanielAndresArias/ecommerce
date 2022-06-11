@@ -1,40 +1,172 @@
 {
-    "mantas":[
+    "products":[
         {
+            "category": "mantas",
             "id": 1,
-            "image": "assets/images/mantaAmarilla.jpg",
+            "image": "/assets/images/mantaAmarilla.jpg",
             "name": "Manta amarilla",
-            "price": 5000
+            "price": 5000,
+            "size": "2 x 0,8 m"
         },
         {
+            "category": "mantas",
             "id": 2,
-            "image": "assets/images/mantaBison.jpg",
+            "image": "/assets/images/mantaBison.jpg",
             "name": "Manta bison",
-            "price": 4200
+            "price": 4200,
+            "size": "2 x 0,8 m"
         },
         {
+            "category": "mantas",
             "id": 3,
-            "image": "assets/images/mantaBisonClaro.jpg",
+            "image": "/assets/images/mantaBisonClaro.jpg",
             "name": "Manta bison claro",
-            "price": 4200
+            "price": 4200,
+            "size": "2 x 0,8 m"
         },
         {
+            "category": "mantas",
             "id": 4,
-            "image": "assets/images/mantaGris.jpg",
+            "image": "/assets/images/mantaGris.jpg",
             "name": "Manta gris",
-            "price": 4500
+            "price": 4500,
+            "size": "2 x 0,8 m"
         },
         {
-            "id": 55,
-            "image": "assets/images/mantaRosa.jpg",
+            "category": "mantas",
+            "id": 5,
+            "image": "/assets/images/mantaRosa.jpg",
             "name": "Manta rosa",
-            "price": 5500
+            "price": 5500,
+            "size": "2 x 0,8 m"
         },
         {
+            "category": "mantas",
             "id": 6,
-            "image": "assets/images/mantaVerdeAgua.jpg",
+            "image": "/assets/images/mantaVerdeAgua.jpg",
             "name": "Manta verde agua",
-            "price": 5000
+            "price": 5000,
+            "size": "2 x 0,8 m"
+        },
+        {
+            "category": "mates",
+            "id": 1,
+            "image": "/assets/images/mateNordico1.jpg",
+            "name": "Mate con detalle amarillo, bombilla negra",
+            "price": 1100,
+            "capacity": "90 ml"
+        },
+        {
+            "category": "mates",
+            "id": 2,
+            "image": "/assets/images/mateNordico2.jpg",
+            "name": "Mate rosa con hoja color madera, bombilla negra",
+            "price": 1100,
+            "capacity": "90 ml"
+        },
+        {
+            "category": "mates",
+            "id": 3,
+            "image": "/assets/images/mateNordico3.jpg",
+            "name": "Mate con detalle azul y hoja color rosa, bombilla negra",
+            "price": 1200,
+            "capacity": "90 ml"
+        },
+        {
+            "category": "mates",
+            "id": 4,
+            "image": "/assets/images/mateNordico4.jpg",
+            "name": "Mate celeste con hoja color madera, bombilla blanca",
+            "price": 1100,
+            "capacity": "90 ml"
+        },
+        {
+            "category": "mates",
+            "id": 5,
+            "image": "/assets/images/mateNordico5.jpg",
+            "name": "Mate con detalle celeste y hoja rosa, bombilla blanca",
+            "price": 1300,
+            "capacity": "90 ml"
+        },
+        {
+            "category": "mates",
+            "id": 6,
+            "image": "/assets/images/mateNordico6.jpg",
+            "name": "Mate con detalle celeste, bombilla cromada",
+            "price": 1300,
+            "capacity": "90 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 1,
+            "image": "/assets/images/tazaGryffindor.jpg",
+            "name": "Taza mágica blanca con escudo de Gryffindor",
+            "price": 1450,
+            "capacity": "220 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 2,
+            "image": "/assets/images/tazaHowarts.jpg",
+            "name": "Taza mágica blanca con escudo de Howarts",
+            "price": 1500,
+            "capacity": "220 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 3,
+            "image": "/assets/images/tazaHufflepuff.jpg",
+            "name": "Taza mágica blanca con escudo de Hufflepuff",
+            "price": 1150,
+            "capacity": "220 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 4,
+            "image": "/assets/images/tazaMapaDelMerodeador.jpg",
+            "name": "Taza mapa del Merodeador",
+            "price": 1100,
+            "capacity": "220 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 5,
+            "image": "/assets/images/tazaRavenclaw.jpg",
+            "name": "Taza mágica blanca con escudo de Ravenclaw",
+            "price": 1150,
+            "capacity": "220 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 6,
+            "image": "/assets/images/tazaSlythering.jpg",
+            "name": "Taza mágica blanca con escudo de Slyhering",
+            "price": 1450,
+            "capacity": "220 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 7,
+            "image": "/assets/images/tazaMusgo1.jpg",
+            "name": "Taza gris claro con detalle de muzgo marrón",
+            "price": 1000,
+            "capacity": "220 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 8,
+            "image": "/assets/images/tazaMusgo2.jpg",
+            "name": "Taza rosa claro con detalle de musgo marrón",
+            "price": 1000,
+            "capacity": "220 ml"
+        },
+        {
+            "category": "tazas",
+            "id": 9,
+            "image": "/assets/images/tazaMusgo3.jpg",
+            "name": "Taza celeste con detalle de musgo marrón",
+            "price": 1000,
+            "capacity": "220 ml"
         }
     ]
 }

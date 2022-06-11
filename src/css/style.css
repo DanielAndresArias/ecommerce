@@ -67,7 +67,8 @@ body::-webkit-scrollbar-track {
     margin: 0 10px;
     position: relative;
     cursor: pointer;
-    border-bottom: 1px solid #FAF6E7; }
+    border-bottom: 1px solid #FAF6E7;
+    color: #D8B33B; }
     .menu--desktop li a {
       display: block;
       text-decoration: none;
@@ -79,6 +80,7 @@ body::-webkit-scrollbar-track {
         background-color: #fff8e2;
         color: #D8B33B;
         padding: 47px 0 0;
+        min-width: 200px;
         top: 25px;
         left: -22px;
         text-align: left; }
@@ -103,6 +105,76 @@ body::-webkit-scrollbar-track {
     .submenu li:hover {
       border-color: #EDDEAD; }
 
+.itemListContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 1000px;
+  min-height: 80vh;
+  margin-bottom: 50px; }
+
+.card {
+  overflow: hidden;
+  margin: 20px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #EDDEAD;
+  background-color: #F5F5F5;
+  transition: 0.75s, scale; }
+  .card a img {
+    width: 250px; }
+  .card .info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: space-around;
+    padding: 0 15px 10px;
+    height: 130px;
+    color: #838078; }
+    .card .info .price {
+      font-size: 24px; }
+      .card .info .price::before {
+        content: "$ "; }
+  .card:hover {
+    transform: scale(1.05); }
+
+.count {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 30px;
+  align-self: center; }
+  .count button {
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    color: #D8B33B; }
+  .count .addToCart {
+    cursor: pointer;
+    padding: 1px;
+    width: 150px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 1px solid #EDDEAD;
+    color: #D8B33B; }
+    .count .addToCart img {
+      width: 18px;
+      margin-right: 5px; }
+  .count span {
+    height: 100%;
+    font-size: 18px;
+    padding: 0 15px;
+    background-color: #F5F5F5; }
+
+/* PAGES */
 .home {
   display: flex;
   flex-flow: column nowrap;
@@ -117,69 +189,100 @@ body::-webkit-scrollbar-track {
     font-weight: 600;
     border-bottom: 2px solid #D8B33B; }
 
-.mantas {
+.products {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  max-width: 1000px;
-  margin-bottom: 50px; }
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #FAF6E7; }
+  .products h1 {
+    margin: 50px 0 25px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #D8B33B;
+    font-size: 32px;
+    font-weight: 600;
+    border-bottom: 2px solid #D8B33B; }
+  .products .section {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch; }
 
-.card {
-  overflow: hidden;
-  margin: 20px;
-  width: 250px;
-  border-radius: 5px;
-  border: 1px solid #EDDEAD;
+.filter {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: baseline;
   background-color: #F5F5F5;
-  transition: 0.75s, scale; }
-  .card div img {
-    width: 250px; }
-  .card .info {
+  margin: 20px 0 70px;
+  padding: 20px 30px;
+  border: 1px solid #EDDEAD;
+  border-radius: 5px; }
+  .filter h2 {
+    font-size: 22px;
+    color: #D8B33B; }
+  .filter ul {
     display: flex;
     flex-flow: column nowrap;
     align-items: start;
-    justify-content: space-around;
-    padding: 0 15px 10px;
-    height: 120px;
-    color: #838078; }
-    .card .info .price {
-      font-size: 24px; }
-      .card .info .price::before {
-        content: "$ "; }
-    .card .info .count {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      height: 30px;
-      align-self: center; }
-      .card .info .count button {
-        cursor: pointer;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 100%;
-        font-size: 18px;
-        font-weight: 400;
-        border: none;
+    list-style: none;
+    margin-top: 20px; }
+    .filter ul li {
+      font-size: 18px;
+      margin: 5px 0;
+      padding: 0 10px;
+      transition: 1s, scale; }
+      .filter ul li:hover {
+        transform: scale(1.1); }
+      .filter ul li a {
+        text-decoration: none;
         color: #D8B33B; }
-      .card .info .count .addToCart {
+
+.itemDetailContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #FAF6E7;
+  min-height: calc(100vh - 120px); }
+
+.itemDetail {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 0 50px; }
+  .itemDetail .img {
+    border: 1px solid #a7a39a; }
+    .itemDetail .img img {
+      width: 500px; }
+  .itemDetail .info {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 50px 0;
+    max-width: 600px;
+    height: 500px; }
+    .itemDetail .info h3, .itemDetail .info span {
+      margin: 10px 0; }
+    .itemDetail .info h3 {
+      font-size: 36px;
+      color: #D8B33B; }
+    .itemDetail .info .price {
+      font-size: 28px;
+      font-weight: 900;
+      color: #070603; }
+      .itemDetail .info .price::before {
+        content: "$ "; }
+    .itemDetail .info span {
+      font-size: 22px; }
+    .itemDetail .info .count {
+      margin: 220px;
+      min-height: 30px; }
+      .itemDetail .info .count .addToCart {
         cursor: pointer;
         padding: 1px;
-        width: 150px;
-        font-size: 12px;
+        width: 200px;
+        font-size: 14px;
         font-weight: 400;
         text-transform: uppercase;
         border: 1px solid #EDDEAD;
         color: #D8B33B; }
-        .card .info .count .addToCart img {
+        .itemDetail .info .count .addToCart img {
           width: 18px;
           margin-right: 5px; }
-      .card .info .count span {
-        height: 100%;
-        font-size: 18px;
-        padding: 0 15px;
-        background-color: #F5F5F5; }
-  .card:hover {
-    transform: scale(1.05); }

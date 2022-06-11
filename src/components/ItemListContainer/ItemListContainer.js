@@ -3,16 +3,20 @@ import { getProducts } from "../../asyncmock";
 import React, { useState, useEffect } from "react";
 import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({tipo}) => {
 
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        getProducts().then(aux => aux.json()).then(aux => setProducts(aux[props.tipo]))
-    }, []);
+
+        getProducts(tipo).then(aux => setProducts(aux))
+
+        return(() => setProducts([]))
+
+    }, [tipo]);
 
     return(
-        <section className={props.tipo}>
+        <section className="itemListContainer">
             <ItemList products={products}/>
         </section>
     )

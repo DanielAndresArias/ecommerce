@@ -95,6 +95,7 @@ body::-webkit-scrollbar-track {
         position: relative;
         cursor: pointer;
         border-bottom: 1px solid $color-background;
+        color: $color-font-header;
 
         a{
             display: block;
@@ -110,6 +111,7 @@ body::-webkit-scrollbar-track {
                 background-color: $color-background-white;
                 color: $color-font-header;
                 padding: 47px 0 0;
+                min-width: 200px;
                 top: 25px;
                 left: -22px;
                 text-align: left;
@@ -147,6 +149,96 @@ body::-webkit-scrollbar-track {
     }
 }
 
+.itemListContainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 1000px;
+    min-height: 80vh;
+    margin-bottom: 50px;
+}
+
+.card{
+    overflow: hidden;
+    margin: 20px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid $color-primary-light;
+    background-color: $color-white;
+    transition: 0.75s, scale;
+    a{
+        img{
+            width: 250px;
+        }
+    }
+    
+    .info{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: start;
+        justify-content: space-around;
+        padding: 0 15px 10px;
+        height: 130px;
+        color: $color-gray;
+        .price{
+            font-size: 24px;
+
+            &::before{
+                content: "$ ";
+            }
+        }
+        
+    }
+
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+
+.count{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 30px;
+    align-self: center;
+    button{
+        cursor: pointer;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        border: none;
+        color: $color-font-header;
+        
+    }
+    .addToCart{
+        cursor: pointer;
+        padding: 1px;
+        width: 150px;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        border: 1px solid $color-primary-light;
+        color: $color-font-header;
+        img{
+            width: 18px;
+            margin-right: 5px;
+        }
+    }
+    span{
+        height: 100%;
+        font-size: 18px;
+        padding: 0 15px;
+        background-color: $color-white;
+    }
+}
+
+/* PAGES */
+
 .home{
     display: flex;
     flex-flow: column nowrap;
@@ -164,68 +256,128 @@ body::-webkit-scrollbar-track {
     }
 }
 
-.mantas{
+.products{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    max-width: 1000px;
-    margin-bottom: 50px;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: $color-background;
+
+    h1{
+        margin: 50px 0 25px;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-font-header;
+        font-size: 32px;
+        font-weight: 600;
+        border-bottom: 2px solid $color-font-header;
+    }
+
+    .section{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch;
+    }
 }
 
-.card{
-    overflow: hidden;
-    margin: 20px;
-    width: 250px;
-    border-radius: 5px;
-    border: 1px solid $color-primary-light;
+.filter{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: baseline;
     background-color: $color-white;
-    transition: 0.75s, scale;
-    div{
-        img{
-            width: 250px;
-        }
+    margin: 20px 0 70px;
+    padding: 20px 30px;
+    border: 1px solid $color-primary-light;
+    border-radius: 5px;
+
+    h2{
+        font-size: 22px;
+        color: $color-font-header;
     }
-    
-    .info{
+
+    ul{
         display: flex;
         flex-flow: column nowrap;
         align-items: start;
-        justify-content: space-around;
-        padding: 0 15px 10px;
-        height: 120px;
-        color: $color-gray;
-        .price{
-            font-size: 24px;
+        list-style: none;
+        margin-top: 20px;
 
-            &::before{
-                content: "$ ";
+        li{
+            font-size: 18px;
+            margin: 5px 0;
+            padding: 0 10px;
+            transition: 1s, scale;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+
+            a{
+                text-decoration: none;
+                color: $color-font-header;
             }
         }
-        .count{
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            height: 30px;
-            align-self: center;
-            button{
-                cursor: pointer;
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                justify-content: center;
-                width: 30px;
-                height: 100%;
-                font-size: 18px;
-                font-weight: 400;
-                border: none;
-                color: $color-font-header;
-                
+    }
+}
+
+.itemDetailContainer{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-background;
+    min-height: calc(100vh - 120px);
+}
+
+.itemDetail{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 0 50px;
+
+    .img{
+        border: 1px solid $color-gray-light;
+        img{
+            width: 500px;
+        }
+    }
+
+    .info{
+        display: flex;
+        flex-flow: column nowrap;
+        margin: 0 50px 0;
+        max-width: 600px;
+        height: 500px;
+
+        h3, span{
+            margin: 10px 0;
+        }
+
+        h3{
+            font-size: 36px;
+            color: $color-font-header;
+        }
+
+        .price{
+            font-size: 28px;
+            font-weight: 900;
+            color: $color-font;
+
+            &::before{
+                content: "$ "
             }
+        }
+
+        span{
+            font-size: 22px;
+        }
+
+        .count{
+            margin: 220px;
+            min-height: 30px;
             .addToCart{
                 cursor: pointer;
                 padding: 1px;
-                width: 150px;
-                font-size: 12px;
+                width: 200px;
+                font-size: 14px;
                 font-weight: 400;
                 text-transform: uppercase;
                 border: 1px solid $color-primary-light;
@@ -235,16 +387,6 @@ body::-webkit-scrollbar-track {
                     margin-right: 5px;
                 }
             }
-            span{
-                height: 100%;
-                font-size: 18px;
-                padding: 0 15px;
-                background-color: $color-white;
-            }
         }
-    }
-
-    &:hover{
-        transform: scale(1.05);
     }
 }

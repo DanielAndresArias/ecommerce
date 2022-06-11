@@ -5,9 +5,9 @@ const Home = () =>{
     return (
         <main className='home'>
           <h2>destacado</h2>
-          <ItemListContainer tipo="mantas"/>
+          <ItemListContainer tipo='mantas'/>
           <h2>ofertas</h2>
-          <ItemListContainer tipo="mantas"/>
+          <ItemListContainer tipo='mantas'/>
         </main>
     )
 }

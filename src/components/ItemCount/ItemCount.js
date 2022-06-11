@@ -17,7 +17,7 @@ const ItemCount = (props) =>{
                                 </>
                                 :
                                 <>
-                                    <button className='addToCart' onClick={increment}><img src={"./cart.png"} alt={"Carrito de compras"}/>Añadir al carrito</button>
+                                    <button className='addToCart' onClick={increment}><img src={"/cart.png"} alt={"Carrito de compras"}/><p>Añadir al carrito</p></button>
                                 </>)   
     }, [counter])
 
