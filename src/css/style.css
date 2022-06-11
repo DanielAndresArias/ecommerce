@@ -247,15 +247,16 @@ body::-webkit-scrollbar-track {
 .itemDetail {
   display: flex;
   flex-flow: row nowrap;
+  background-color: #F5F5F5;
+  border: 1px solid #a7a39a;
   margin: 0 0 50px; }
-  .itemDetail .img {
-    border: 1px solid #a7a39a; }
-    .itemDetail .img img {
-      width: 500px; }
+  .itemDetail .img img {
+    border-right: 1px solid #a7a39a;
+    width: 500px; }
   .itemDetail .info {
     display: flex;
     flex-flow: column nowrap;
-    margin: 0 50px 0;
+    padding: 0 50px 0;
     max-width: 600px;
     height: 500px; }
     .itemDetail .info h3, .itemDetail .info span {
