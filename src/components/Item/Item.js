@@ -1,10 +1,9 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from '../ItemCount/ItemCount';
 
 
 const Item = (props) => {
-    
-    
 
     return(
         <div className="card">
