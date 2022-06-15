@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from '../ItemCount/ItemCount';
 
 
 const Item = (props) => {
@@ -13,7 +11,6 @@ const Item = (props) => {
             <div className="info">
                 <span className="price">{props.price}</span>
                 <p>{props.name}</p>
-                <ItemCount initial={0} stock={5}/>
             </div>
         </div>
     )

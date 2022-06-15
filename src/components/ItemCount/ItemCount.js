@@ -7,18 +7,17 @@ const ItemCount = (props) =>{
 
     const [countDisplay, setCountDisplay] = useState();
 
-    useEffect(() => {setCountDisplay( (counter !== 0)? 
-                                <>
-                                    <button onClick={decrement}>-</button>
-                                    <span>
-                                        {counter}
-                                    </span>
-                                    <button onClick={increment}>+</button>
-                                </>
-                                :
-                                <>
+    useEffect(() => { 
+                setCountDisplay(<>
+                                    <div className='count--div'>
+                                        <button onClick={decrement}>-</button>
+                                        <span>
+                                            {counter}
+                                        </span>
+                                        <button onClick={increment}>+</button>
+                                    </div>
                                     <button className='addToCart' onClick={increment}><img src={"/cart.png"} alt={"Carrito de compras"}/><p>Añadir al carrito</p></button>
-                                </>)   
+                                </>)
     }, [counter])
 
     const increment = (() => {(counter < props.stock)&& setCount(counter+1)});
