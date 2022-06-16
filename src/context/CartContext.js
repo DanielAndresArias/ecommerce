@@ -13,15 +13,40 @@ export const CartProvider = ( {children} ) =>{
     }, [cart])
 
     const addItem = (prod) => {
-        (!isInCart(prod)) && setCart([...cart, prod]);
+        if(prod.quantity !== 0)
+        {
+            if(!isInCart(prod)){
+                setCart([...cart, prod]);
+            }
+            else {
+                let newCart = [...cart];
+                newCart.map((p) => {
+                    if(p.id !== prod.id){
+                        return p;
+                    }
+                    else if (p.quantity !== prod.quantity){
+                        p.quantity = prod.quantity;
+                        return p;
+                    }
+                });
+                setCart(newCart);
+            }
+        }
+        else{
+            removeItem(prod);
+        }
     }
 
     const removeItem = (prod) => {
         (isInCart(prod)) && setCart(cart.filter(p => p.id !== prod.id));
     }
 
+    const clearItem = (prod) => {
+        setCart([]);
+    }
+
     const isInCart = (prod) => {
-        return cart.find(p => p.id === prod.id);
+        return cart.some(p => p.id === prod.id);
     }
 
     return(
