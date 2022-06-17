@@ -22,7 +22,7 @@ const ItemDetail = (props) =>{
                 <span className="price">{props.price}</span>
                 <span>{props.detalle}</span>
                 <ItemCount initial={0} stock={5} onAdd={handleOnAdd}/>
-                <Link to='/cart'>Terminar compra</Link>
+                <button className='finish'><Link to='/cart'>Terminar compra</Link></button>
             </div>
         </div>
     )

@@ -9,21 +9,19 @@
 
 /* Paleta de Colores */
 
-$color-background: #FAF6E7;
-$color-background-white: #fff8e2;
-$color-font: #070603;
-$color-background-footer: #070603;
-$color-font-header: #D8B33B;
-$color-primary-light: #EDDEAD;
-$color-gray-light: #a7a39a;
-$color-gray: #838078;
-$color-white: #F5F5F5;
+$color-white: #f5f5f5;
+$color-white-smooth: #faf8f1;
+$color-black: #14120a;
+$color-mustard: #D8B33B;
+$color-mustard-ligth: #e9daaa;
+$color-gray: #afaeac;
+$color-gray-light: #d3d2ce;
 
 /* Scrollbar Personalizada */
 
 body::-webkit-scrollbar {
     -webkit-appearance: none;
-    background-color: $color-background;
+    background-color: $color-white-smooth;
 }
 
 body::-webkit-scrollbar:vertical {
@@ -39,9 +37,9 @@ body::-webkit-scrollbar:horizontal {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: $color-gray-light;
+    background-color: $color-gray;
     border-radius: 20px;
-    border: 2px solid $color-background-white;
+    border: 2px solid $color-white-smooth;
 }
 
 body::-webkit-scrollbar-track {
@@ -51,7 +49,7 @@ body::-webkit-scrollbar-track {
 /* HEADER */
 
 .header{
-    background-color: $color-background-white;
+    background-color: $color-white-smooth;
     font-size: 18px;
     font-weight: 500;
     display: flex;
@@ -62,7 +60,7 @@ body::-webkit-scrollbar-track {
     position: sticky;
     top: 0;
     z-index: 500;
-    border-bottom: 1px solid $color-primary-light;
+    border-bottom: 1px solid $color-mustard-ligth;
 }
 
 .logo{
@@ -94,22 +92,22 @@ body::-webkit-scrollbar-track {
         margin: 0 10px;
         position: relative;
         cursor: pointer;
-        border-bottom: 1px solid $color-background;
-        color: $color-font-header;
+        border-bottom: 1px solid $color-white-smooth;
+        color: $color-mustard;
 
         a{
             display: block;
             text-decoration: none;
-            color: $color-font-header;
+            color: $color-mustard;
         }
 
         &:hover{
-            border-color: $color-font-header;
+            border-color: $color-mustard;
             
             .submenu{
                 display: block;
-                background-color: $color-background-white;
-                color: $color-font-header;
+                background-color: $color-white-smooth;
+                color: $color-mustard;
                 padding: 47px 0 0;
                 min-width: 200px;
                 top: 25px;
@@ -124,9 +122,24 @@ body::-webkit-scrollbar-track {
 
 .cartWidget{
     margin: 0 10px;
+    color: $color-white;
     img{
         width: 34px;
         cursor: pointer;
+    }
+    span{
+        position: absolute;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        top: 62px;
+        right: 55px;
+        border: 1px solid $color-white;
+        background-color: $color-mustard;
+        border-radius: 100%;
+        height: 22px;
+        width: 22px;
     }
 }
 
@@ -140,11 +153,11 @@ body::-webkit-scrollbar-track {
         display: block;
         padding: 10px 15px;
         cursor: pointer;
-        border: 1px solid $color-background-white;
+        border: 1px solid $color-white-smooth;
         margin: 0;
 
         &:hover{
-            border-color: $color-primary-light;
+            border-color: $color-mustard-ligth;
         }
     }
 }
@@ -163,10 +176,11 @@ body::-webkit-scrollbar-track {
     margin: 20px;
     width: 250px;
     border-radius: 5px;
-    border: 1px solid $color-primary-light;
     background-color: $color-white;
     transition: 0.75s, scale;
+    border: 1px solid $color-gray-light;
     a{
+        line-height: 0;
         img{
             width: 250px;
         }
@@ -176,10 +190,10 @@ body::-webkit-scrollbar-track {
         display: flex;
         flex-flow: column nowrap;
         align-items: start;
-        justify-content: space-around;
-        padding: 0 15px 10px;
-        height: 130px;
-        color: $color-gray;
+        justify-content: start;
+        padding: 5px 15px 10px;
+        height: 100px;
+        color: $color-black;
         .price{
             font-size: 24px;
 
@@ -212,7 +226,7 @@ body::-webkit-scrollbar-track {
         font-size: 18px;
         font-weight: 400;
         border: none;
-        color: $color-font-header;
+        color: $color-mustard;
         
     }
     .addToCart{
@@ -222,8 +236,8 @@ body::-webkit-scrollbar-track {
         font-size: 12px;
         font-weight: 400;
         text-transform: uppercase;
-        border: 1px solid $color-primary-light;
-        color: $color-font-header;
+        border: 1px solid $color-mustard-ligth;
+        color: $color-mustard;
         img{
             width: 18px;
             margin-right: 5px;
@@ -233,7 +247,7 @@ body::-webkit-scrollbar-track {
         height: 100%;
         font-size: 18px;
         padding: 0 15px;
-        background-color: $color-white;
+        background-color: $color-white-smooth;
     }
 }
 
@@ -243,16 +257,16 @@ body::-webkit-scrollbar-track {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    background-color: $color-background;
+    background-color: $color-white-smooth;
 
     h2{
         margin: 50px 0 25px;
         text-transform: uppercase;
         text-align: center;
-        color: $color-font-header;
+        color: $color-mustard;
         font-size: 32px;
         font-weight: 600;
-        border-bottom: 2px solid $color-font-header;
+        border-bottom: 2px solid $color-mustard;
     }
 }
 
@@ -260,16 +274,16 @@ body::-webkit-scrollbar-track {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    background-color: $color-background;
+    background-color: $color-white-smooth;
 
     h1{
         margin: 50px 0 25px;
         text-transform: uppercase;
         text-align: center;
-        color: $color-font-header;
+        color: $color-mustard;
         font-size: 32px;
         font-weight: 600;
-        border-bottom: 2px solid $color-font-header;
+        border-bottom: 2px solid $color-mustard;
     }
 
     .section{
@@ -286,12 +300,12 @@ body::-webkit-scrollbar-track {
     background-color: $color-white;
     margin: 20px 0 70px;
     padding: 20px 30px;
-    border: 1px solid $color-primary-light;
+    border: 1px solid $color-gray-light;
     border-radius: 5px;
 
     h2{
         font-size: 22px;
-        color: $color-font-header;
+        color: $color-mustard;
     }
 
     ul{
@@ -313,7 +327,7 @@ body::-webkit-scrollbar-track {
 
             a{
                 text-decoration: none;
-                color: $color-font-header;
+                color: $color-mustard;
             }
         }
     }
@@ -324,7 +338,7 @@ body::-webkit-scrollbar-track {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    background-color: $color-background;
+    background-color: $color-white-smooth;
     min-height: calc(100vh - 120px);
 }
 
@@ -333,10 +347,12 @@ body::-webkit-scrollbar-track {
     flex-flow: row nowrap;
     background-color: $color-white;
     border: 1px solid $color-gray-light;
+    border-radius: 5px;
     
     margin: 0 0 50px;
 
     .img{
+        line-height: 0;
         img{
             border-right: 1px solid $color-gray-light;
             width: 500px;
@@ -356,13 +372,13 @@ body::-webkit-scrollbar-track {
 
         h3{
             font-size: 36px;
-            color: $color-font-header;
+            color: $color-mustard;
         }
 
         .price{
             font-size: 28px;
             font-weight: 900;
-            color: $color-font;
+            color: $color-black;
 
             &::before{
                 content: "$ "
@@ -373,22 +389,53 @@ body::-webkit-scrollbar-track {
             font-size: 22px;
         }
 
-        .count{
-            margin: 220px;
-            min-height: 30px;
+        .itemCount{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 150px;
+            margin-top: 75px;
+            .count{
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                width: 100px;
+                justify-content: space-between;
+            }
             .addToCart{
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
                 cursor: pointer;
-                padding: 1px;
-                width: 200px;
+                padding: 5px;
+                width: 180px;
                 font-size: 14px;
                 font-weight: 400;
                 text-transform: uppercase;
-                border: 1px solid $color-primary-light;
-                color: $color-font-header;
+                border: 1px solid $color-mustard-ligth;
+                color: $color-mustard;
                 img{
                     width: 18px;
                     margin-right: 5px;
                 }
+            }
+        }
+
+        .finish{
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            width: 180px;
+            align-self: center;
+            border: 1px solid $color-mustard-ligth;
+
+            a{
+                text-decoration: none;
+                color: $color-mustard;
             }
         }
     }

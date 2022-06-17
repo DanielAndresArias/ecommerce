@@ -284,7 +284,7 @@ export const getProducts = (tipo) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products.filter(prod => prod.category === tipo))
-        }, 2000)
+        }, 0)
     })
 }
 
@@ -293,6 +293,6 @@ export const getProduct = (id) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products.find(prod => prod.id === parseInt(id)))
-        }, 2000)
+        }, 0)
     })
 }

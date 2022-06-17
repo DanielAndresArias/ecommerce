@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 
 const ItemCount = ({ initial, stock, onAdd }) =>{
@@ -9,7 +9,7 @@ const ItemCount = ({ initial, stock, onAdd }) =>{
 
     useEffect(() => { 
                 setCountDisplay(<>
-                                    <div className='count--div'>
+                                    <div className='count'>
                                         <button onClick={decrement}>-</button>
                                         <span>
                                             {counter}
@@ -25,7 +25,7 @@ const ItemCount = ({ initial, stock, onAdd }) =>{
     const decrement = (() => {(counter > initial)&& setCount(counter-1)});
     
     return (
-        <div className='count'>
+        <div className='itemCount'>
             {countDisplay}
         </div>
     )
