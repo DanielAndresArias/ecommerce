@@ -37,16 +37,28 @@ export const CartProvider = ( {children} ) =>{
         }
     }
 
-    const removeItem = (prod) => {
-        (isInCart(prod)) && setCart(cart.filter(p => p.id !== prod.id));
+    const removeItem = (id) => {
+        const cartFilter = cart.filter(p => p.id !== id) 
+        setCart(cartFilter)
     }
 
-    const clearItem = () => {
+    const clearCart = () => {
         setCart([]);
     }
 
     const isInCart = (prod) => {
         return cart.some(p => p.id === prod.id);
+    }
+
+    const getTotalPrice = () => {
+
+        let totalPrice = 0;
+
+        cart.forEach((prod) => {
+            totalPrice += prod.price * prod.quantity;
+        })
+
+        return totalPrice;
     }
 
     return(
@@ -55,8 +67,9 @@ export const CartProvider = ( {children} ) =>{
             totalQuantity,
             addItem,
             removeItem,
-            clearItem,
-            isInCart
+            clearCart,
+            isInCart,
+            getTotalPrice
         }}>
             {children}
         </CartContext.Provider>

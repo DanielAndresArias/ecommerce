@@ -16,6 +16,7 @@ $color-mustard: #D8B33B;
 $color-mustard-ligth: #e9daaa;
 $color-gray: #afaeac;
 $color-gray-light: #d3d2ce;
+$color-red: #ff6f6f;
 
 /* Scrollbar Personalizada */
 
@@ -166,6 +167,7 @@ body::-webkit-scrollbar-track {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    align-items: baseline;
     width: 1000px;
     min-height: 80vh;
     margin-bottom: 50px;
@@ -437,6 +439,137 @@ body::-webkit-scrollbar-track {
                 text-decoration: none;
                 color: $color-mustard;
             }
+        }
+    }
+}
+
+.cartItem{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80vw;
+    height: 100px;
+    padding: 20px 50px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-white-smooth;
+    border: 1px solid $color-mustard-ligth;
+    border-radius: 5px;
+    margin: 20px 0;
+
+    span{
+        width: 15vw;
+        font-size: 20px;
+        font-weight: 600;
+        color: $color-mustard;
+    }
+
+    button{
+        height: 25px;
+        width: 25px;
+        background-color: $color-white;
+        color: $color-red;
+        border: 1px solid $color-red;
+        overflow: hidden;
+        border-radius: 5px;
+        font-weight: 900;
+        cursor: pointer;
+
+        &:hover{
+            border: 2px solid $color-red;
+        }
+
+        &:active{
+            border: none;
+            background-color: $color-red;
+            color: $color-white;
+        }
+    }
+}
+
+.cart{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+    h1{
+        text-align: center;
+        margin: 50px auto;
+        color: $color-mustard;
+        text-decoration: underline;
+        font-size: 32px;
+    }
+
+    .resumen{
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 50px 20vw;
+        padding: 0 1vw;
+        height: 100px;
+        width: 80vw;
+        align-items: center;
+        justify-content: end;
+        h2{
+            font-size: 24px;
+            color: $color-mustard;
+            margin: 0 5vw;
+        }
+
+        .clearCart{
+            background-color: $color-white;
+            color: $color-red;
+            border: 1px solid $color-red;
+            overflow: hidden;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 18px;
+
+            &:hover{
+                border: 2px solid $color-red;
+            }
+
+            &:active{
+                border: none;
+                background-color: $color-red;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.cartEmpty{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    margin: 30vh 0;
+
+    h1{
+        text-align: center;
+        margin: 50px auto;
+        color: $color-mustard;
+        font-size: 32px;
+    }
+
+    a{
+        background-color: $color-white-smooth;
+        color: $color-mustard;
+        border: 1px solid $color-mustard-ligth;
+        text-decoration: none;
+        overflow: hidden;
+        border-radius: 5px;
+        font-weight: 900;
+        font-size: 20px;
+        padding: 5px 15px;
+        cursor: pointer;
+
+        &:active{
+            background-color: $color-mustard;
+            color: $color-white-smooth;
         }
     }
 }
