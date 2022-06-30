@@ -31,7 +31,7 @@ const ItemDetail = (props) =>{
                 <h3>{props.name}</h3>
                 <span className="price">{props.price}</span>
                 <span>{props.detalle}</span>
-                <ItemCount initial={initialCount} stock={5} onAdd={handleOnAdd}/>
+                <ItemCount initial={initialCount} stock={props.stock} onAdd={handleOnAdd}/>
                 <button className='finish'><Link to='/cart'>Terminar compra</Link></button>
             </div>
         </div>
