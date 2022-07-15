@@ -13,7 +13,7 @@ const Checkout = () => {
     const[adress, setAdress] = useState("");
     const[submit, isSubmit] = useState(false);
     const[id, setId] = useState("");
-    const[stepCheckout, setStepCheckout] = useState("");
+    const[stepCheckout, setStepCheckout] = useState();
 
     const total = getTotalPrice();
 
@@ -26,12 +26,17 @@ const Checkout = () => {
 
     const handleCreateOrder = () => {
 
+        const date = new Date();
+
+        const fecha = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}`
+
         const order = {
             buyer: {
                 name,
                 email,
                 phone,
-                adress
+                adress,
+                fecha
             },
             items: cart,
             total: total
@@ -67,22 +72,21 @@ const Checkout = () => {
                 }
             }).then(({ id }) => {
                 batch.commit();
-                clearCart();
                 isSubmit(true);
-                setId(id)
+                clearCart();
+                setId(id);
                 console.log(`Su orden se genero correctamente. El id de su orden es: ${id}`);
             }).catch(error => {
                 (error.type === 'out_of_stock')?
-                    console.log('Hay productos que no tienen stock')
+                    window.location = '/cart'
                     :
                     console.log(error)
             })
     }
 
     useEffect(() => {
-            (!submit)?
-            setStepCheckout(
-                <form onSubmit={handleSubmit}>
+        setStepCheckout(
+            <form onSubmit={handleSubmit}>
                     <label htmlFor='name'>Nombre completo:</label>
                     <input 
                         type='text' 
@@ -113,9 +117,11 @@ const Checkout = () => {
                         />
                     <input type='submit' value='Enviar'/>
             </form>
-            )
-            :
-            setStepCheckout(
+        )
+    }, [name, email, phone, adress])
+
+    useEffect(() => {
+            submit && setStepCheckout(
                 <>
                     <span>Su compra fue procesada con éxito</span>
                     <br/>
