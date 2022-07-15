@@ -17,6 +17,7 @@ $color-mustard-ligth: #e9daaa;
 $color-gray: #afaeac;
 $color-gray-light: #d3d2ce;
 $color-red: #ff6f6f;
+$color-green: #55d83b;
 
 /* Tipografías */
 
@@ -396,7 +397,7 @@ body{
 
         .price{
             font-size: 28px;
-            font-weight: 900;
+            font-weight: 700;
             color: $color-black;
 
             &::before{
@@ -421,6 +422,16 @@ body{
                 align-items: center;
                 width: 100px;
                 justify-content: space-between;
+                button{
+                    border: 1px solid $color-gray-light;
+                }
+                
+                span{
+                    border-top: 1px solid $color-gray-light;
+                    border-bottom: 1px solid $color-gray-light;
+                    color: $color-black;
+                }
+                
             }
             .addToCart{
                 display: flex;
@@ -468,10 +479,16 @@ body{
     padding: 20px 50px;
     justify-content: space-between;
     align-items: center;
-    background-color: $color-white-smooth;
+    background-color: $color-white;
     border: 1px solid $color-mustard-ligth;
     border-radius: 5px;
     margin: 20px 0;
+
+    img{
+        width: 70px;
+        overflow: hidden;
+        border-radius: 5px;
+    }
 
     span{
         width: 15vw;
@@ -521,16 +538,17 @@ body{
     .resumen{
         display: flex;
         flex-flow: row nowrap;
-        margin: 50px 20vw;
+        align-self: flex-end;
+        margin: 50px 10vw;
         padding: 0 1vw;
         height: 100px;
-        width: 80vw;
+        width: 50vw;
         align-items: center;
-        justify-content: end;
+        justify-content: space-around;
         h2{
             font-size: 24px;
             color: $color-mustard;
-            margin: 0 5vw;
+            margin: 0 10px;
         }
 
         .clearCart{
@@ -543,6 +561,7 @@ body{
             cursor: pointer;
             padding: 10px 20px;
             font-size: 18px;
+            margin: 0 10px;
 
             &:hover{
                 border: 2px solid $color-red;
@@ -551,6 +570,29 @@ body{
             &:active{
                 border: none;
                 background-color: $color-red;
+                color: $color-white;
+            }
+        }
+
+        .goCheckout{
+            background-color: $color-white;
+            color: $color-green;
+            border: 1px solid $color-green;
+            overflow: hidden;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+
+            &:hover{
+                border: 2px solid $color-green;
+            }
+
+            &:active{
+                border: none;
+                background-color: $color-green;
                 color: $color-white;
             }
         }
@@ -704,6 +746,84 @@ body{
                     }
                 }
             }
+        }
+    }
+}
+
+.checkout{
+    align-items: center;
+	display: flex;
+	flex-flow: column nowrap;
+    margin-top: 20px;
+    padding: 5%;
+    color: $color-mustard;
+
+    h2{
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    form{
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 5% 180px;
+        font-size: 18px;
+        border: 1px solid $color-gray;
+        border-radius: 5px;
+        background-color: $color-white;
+        height: 550px;
+        label{
+            margin-bottom: 5px;
+        }
+        input{
+            margin-bottom: 25px;
+            border: 1px solid $color-gray;
+            border-radius: 2px;
+            height: 25px;
+            text-align: center;
+            width: 250px;
+            &:focus{
+                outline: none;
+                border: 1px solid $color-gray;
+            }
+        }
+        .submit{
+            background-color: $color-white;
+            color: $color-green;
+            border: 1px solid $color-green;
+            overflow: hidden;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            height: auto;
+
+            &:hover{
+                border: 2px solid $color-green;
+            }
+
+            &:active{
+                border: none;
+                background-color: $color-green;
+                color: $color-white;
+            }
+        }
+    }
+
+    section{
+        padding: 50px 100px;
+        background-color: $color-white;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $color-green;
+        border-radius: 5px;
+        span{
+            color: $color-black;
         }
     }
 }

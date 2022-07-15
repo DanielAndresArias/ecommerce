@@ -2,10 +2,11 @@ import CartContext from '../../context/CartContext';
 import { addDoc, collection, writeBatch, getDocs, query, where, documentId } from 'firebase/firestore'
 import { db } from '../../services/firebase/index'
 import { useContext, useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 const Checkout = () => {
 
-    const { cart, clearCart, getTotalPrice, totalQuantity } = useContext(CartContext);
+    const { cart, clearCart, getTotalPrice, removeItem } = useContext(CartContext);
 
     const[name, setName] = useState("");
     const[email, setEmail] = useState("");
@@ -19,8 +20,6 @@ const Checkout = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("El formulario se ha cargado con éxito")
-        console.log(name, email, phone, adress);
         handleCreateOrder();
     }
 
@@ -75,18 +74,28 @@ const Checkout = () => {
                 isSubmit(true);
                 clearCart();
                 setId(id);
-                console.log(`Su orden se genero correctamente. El id de su orden es: ${id}`);
             }).catch(error => {
-                (error.type === 'out_of_stock')?
-                    window.location = '/cart'
-                    :
-                    console.log(error)
+                if(error.type === 'out_of_stock'){
+                    let text = '';
+                    outOfStock.forEach(prod => {
+                        removeItem(prod.id);
+                        text += `${prod.name}\n`;
+                    });
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Productos agotados...',
+                        text: `${text}`,
+                        footer: '<a href="/cart">Volver al carrito</a>'
+                    })
+                }
             })
     }
 
     useEffect(() => {
         setStepCheckout(
-            <form onSubmit={handleSubmit}>
+            <>
+                <h2>Complete el formulario para finalizar la compra</h2>
+                <form onSubmit={handleSubmit}>
                     <label htmlFor='name'>Nombre completo:</label>
                     <input 
                         type='text' 
@@ -103,7 +112,7 @@ const Checkout = () => {
                         />
                     <label htmlFor='phone'>Número de celular:</label>
                     <input 
-                        type='number' 
+                        type='text' 
                         id='phone' 
                         required
                         onChange={(e) => setPhone(e.target.value)}
@@ -115,18 +124,18 @@ const Checkout = () => {
                         required
                         onChange={(e) => setAdress(e.target.value)}
                         />
-                    <input type='submit' value='Enviar'/>
-            </form>
+                    <input type='submit' value='Confirmar' className='submit'/>
+                </form>
+            </>
         )
     }, [name, email, phone, adress])
 
     useEffect(() => {
             submit && setStepCheckout(
-                <>
-                    <span>Su compra fue procesada con éxito</span>
-                    <br/>
+                <section className='endCheckout'>
+                    <h2>Su compra fue procesada con éxito</h2>
                     <span>{`Su número de orden es: ${id}`}</span>
-                </>
+                </section>
             )
     }, [submit])
 

@@ -298,7 +298,7 @@ body {
       color: #D8B33B; }
     .itemDetail .info .price {
       font-size: 28px;
-      font-weight: 900;
+      font-weight: 700;
       color: #14120a; }
       .itemDetail .info .price::before {
         content: "$ "; }
@@ -317,6 +317,12 @@ body {
         align-items: center;
         width: 100px;
         justify-content: space-between; }
+        .itemDetail .info .itemCount .count button {
+          border: 1px solid #d3d2ce; }
+        .itemDetail .info .itemCount .count span {
+          border-top: 1px solid #d3d2ce;
+          border-bottom: 1px solid #d3d2ce;
+          color: #14120a; }
       .itemDetail .info .itemCount .addToCart {
         display: flex;
         flex-flow: row nowrap;
@@ -354,10 +360,14 @@ body {
   padding: 20px 50px;
   justify-content: space-between;
   align-items: center;
-  background-color: #faf8f1;
+  background-color: #f5f5f5;
   border: 1px solid #e9daaa;
   border-radius: 5px;
   margin: 20px 0; }
+  .cartItem img {
+    width: 70px;
+    overflow: hidden;
+    border-radius: 5px; }
   .cartItem span {
     width: 15vw;
     font-size: 20px;
@@ -395,16 +405,17 @@ body {
   .cart .resumen {
     display: flex;
     flex-flow: row nowrap;
-    margin: 50px 20vw;
+    align-self: flex-end;
+    margin: 50px 10vw;
     padding: 0 1vw;
     height: 100px;
-    width: 80vw;
+    width: 50vw;
     align-items: center;
-    justify-content: end; }
+    justify-content: space-around; }
     .cart .resumen h2 {
       font-size: 24px;
       color: #D8B33B;
-      margin: 0 5vw; }
+      margin: 0 10px; }
     .cart .resumen .clearCart {
       background-color: #f5f5f5;
       color: #ff6f6f;
@@ -414,12 +425,30 @@ body {
       font-weight: 600;
       cursor: pointer;
       padding: 10px 20px;
-      font-size: 18px; }
+      font-size: 18px;
+      margin: 0 10px; }
       .cart .resumen .clearCart:hover {
         border: 2px solid #ff6f6f; }
       .cart .resumen .clearCart:active {
         border: none;
         background-color: #ff6f6f;
+        color: #f5f5f5; }
+    .cart .resumen .goCheckout {
+      background-color: #f5f5f5;
+      color: #55d83b;
+      border: 1px solid #55d83b;
+      overflow: hidden;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 0 10px; }
+      .cart .resumen .goCheckout:hover {
+        border: 2px solid #55d83b; }
+      .cart .resumen .goCheckout:active {
+        border: none;
+        background-color: #55d83b;
         color: #f5f5f5; }
 
 .cartEmpty {
@@ -535,6 +564,68 @@ body {
           font-weight: 900; }
           .help .questions .box .answer a:hover {
             text-decoration: underline; }
+
+.checkout {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 20px;
+  padding: 5%;
+  color: #D8B33B; }
+  .checkout h2 {
+    font-size: 24px;
+    margin-bottom: 25px; }
+  .checkout form {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 5% 180px;
+    font-size: 18px;
+    border: 1px solid #afaeac;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    height: 550px; }
+    .checkout form label {
+      margin-bottom: 5px; }
+    .checkout form input {
+      margin-bottom: 25px;
+      border: 1px solid #afaeac;
+      border-radius: 2px;
+      height: 25px;
+      text-align: center;
+      width: 250px; }
+      .checkout form input:focus {
+        outline: none;
+        border: 1px solid #afaeac; }
+    .checkout form .submit {
+      background-color: #f5f5f5;
+      color: #55d83b;
+      border: 1px solid #55d83b;
+      overflow: hidden;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 0 10px;
+      height: auto; }
+      .checkout form .submit:hover {
+        border: 2px solid #55d83b; }
+      .checkout form .submit:active {
+        border: none;
+        background-color: #55d83b;
+        color: #f5f5f5; }
+  .checkout section {
+    padding: 50px 100px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #55d83b;
+    border-radius: 5px; }
+    .checkout section span {
+      color: #14120a; }
 
 @keyframes fadeIn {
   from {

@@ -16,11 +16,12 @@ const Cart = () => {
                                 <CartItemList products={cart}/>
                                 <div className='resumen'>
                                     <h2> Precio total: $ {totalPrice}</h2>
+                                    <Link to='/checkout'>
+                                        <button className='goCheckout'>Finalizar compra</button>
+                                    </Link>
                                     <button className='clearCart' onClick={() => clearCart()}>Vaciar carrito</button>
                                 </div>
-                                <Link to='/checkout'>
-                                    <button>Finalizar compra</button>
-                                </Link>
+                                
                             </main>
                             :
                             <main className='cartEmpty'>
