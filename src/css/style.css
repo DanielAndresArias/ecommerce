@@ -30,7 +30,8 @@ body::-webkit-scrollbar-track {
   border-radius: 10px; }
 
 body {
-  background-color: #faf8f1; }
+  background-color: #faf8f1;
+  font-family: "Nunito", sans-serif; }
 
 /* HEADER */
 .header {
@@ -495,6 +496,45 @@ body {
       font-size: 48px;
       font-weight: 400;
       font-family: "The Nautigal", cursive; }
+
+.help {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  animation: fadeIn 1.2s ease-in 0.1s none normal;
+  animation-fill-mode: backwards; }
+  .help .titleHelp {
+    border-bottom: 2px solid #D8B33B;
+    font-size: 34px;
+    font-weight: 500;
+    color: #D8B33B;
+    letter-spacing: 2px;
+    margin: 50px 0;
+    padding: 10px;
+    text-transform: uppercase; }
+  .help .questions {
+    display: inline-block;
+    margin: 0 5% 0; }
+    .help .questions .box {
+      border-bottom: 1px solid #afaeac;
+      margin: 0 5%;
+      padding: 20px;
+      text-align: center; }
+      .help .questions .box .question {
+        color: #afaeac;
+        font-size: 18px;
+        font-weight: 900;
+        margin: 10px; }
+      .help .questions .box .answer {
+        color: #afaeac;
+        font-size: 16px;
+        font-weight: 500;
+        margin: 10px; }
+        .help .questions .box .answer a {
+          color: #afaeac;
+          font-weight: 900; }
+          .help .questions .box .answer a:hover {
+            text-decoration: underline; }
 
 @keyframes fadeIn {
   from {

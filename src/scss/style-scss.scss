@@ -55,6 +55,7 @@ body::-webkit-scrollbar-track {
 
 body{
     background-color: $color-white-smooth;
+    font-family: $font-main;
 }
 
 /* HEADER */
@@ -649,6 +650,60 @@ body{
             font-size: 48px;
             font-weight: 400;
             font-family: $font-logo;
+        }
+    }
+}
+
+.help{
+    align-items: center;
+	display: flex;
+	flex-flow: column nowrap;	
+	animation: fadeIn 1.2s ease-in 0.1s none normal;
+	animation-fill-mode: backwards;
+
+    .titleHelp{
+	    border-bottom: 2px solid $color-mustard;
+        font-size: 34px;
+        font-weight: 500;
+        color: $color-mustard;
+        letter-spacing: 2px;
+        margin: 50px 0;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+
+    .questions{
+        display: inline-block;
+        margin: 0 5% 0;
+
+
+        .box{
+            border-bottom: 1px solid $color-gray;
+            margin: 0 5%;
+            padding: 20px;
+            text-align: center;
+            
+            .question{
+                color: $color-gray;
+                font-size: 18px;
+                font-weight: 900;
+                margin: 10px;
+            }
+
+            .answer{
+                color: $color-gray;
+                font-size: 16px;
+                font-weight: 500;
+                margin: 10px;
+
+                a{
+                    color: $color-gray;
+                    font-weight: 900;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
     }
 }
