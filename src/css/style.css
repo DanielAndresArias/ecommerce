@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
 
 /* VARIABLES */
 /* Paleta de Colores */
+/* Tipografías */
 /* Scrollbar Personalizada */
 body::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -26,6 +28,9 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-track {
   border-radius: 10px; }
+
+body {
+  background-color: #faf8f1; }
 
 /* HEADER */
 .header {
@@ -442,6 +447,54 @@ body::-webkit-scrollbar-track {
     .cartEmpty a:active {
       background-color: #D8B33B;
       color: #faf8f1; }
+
+.aboutUs {
+  align-items: center;
+  color: #afaeac;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  margin: 80px 0;
+  animation: fadeIn 1s ease-in 0.1s none normal;
+  animation-fill-mode: backwards;
+  min-height: 700px; }
+  .aboutUs .us {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    margin: 0 0 50px;
+    width: 80vw; }
+    .aboutUs .us .img {
+      width: 400px;
+      display: inline-block;
+      order: 10; }
+      .aboutUs .us .img img {
+        width: 100%; }
+    .aboutUs .us .description {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: stretch;
+      justify-content: center;
+      font-weight: 300;
+      margin: 25px;
+      text-align: left;
+      width: 450px;
+      order: 20; }
+      .aboutUs .us .description h3 {
+        font-size: 48px;
+        margin-bottom: 30px; }
+      .aboutUs .us .description p {
+        font-size: 18px; }
+  .aboutUs .phrase {
+    text-align: center;
+    margin: 100px 20px 80px;
+    padding: 0 10px 15px;
+    border-bottom: 2px solid #d3d2ce; }
+    .aboutUs .phrase span {
+      font-size: 48px;
+      font-weight: 400;
+      font-family: "The Nautigal", cursive; }
 
 @keyframes fadeIn {
   from {

@@ -18,6 +18,12 @@ $color-gray: #afaeac;
 $color-gray-light: #d3d2ce;
 $color-red: #ff6f6f;
 
+/* Tipografías */
+
+$font-main: 'Nunito', sans-serif;
+$font-logo: 'The Nautigal', cursive;
+$font-title: 'Kanit', arial;
+
 /* Scrollbar Personalizada */
 
 body::-webkit-scrollbar {
@@ -45,6 +51,10 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-track {
     border-radius: 10px;
+}
+
+body{
+    background-color: $color-white-smooth;
 }
 
 /* HEADER */
@@ -576,6 +586,69 @@ body::-webkit-scrollbar-track {
         &:active{
             background-color: $color-mustard;
             color: $color-white-smooth;
+        }
+    }
+}
+
+.aboutUs{
+    align-items: center;
+	color: $color-gray;
+	display: flex;
+	flex-flow: column wrap;
+    justify-content: flex-start;
+	margin: 80px 0;
+	animation: fadeIn 1s ease-in 0.1s none normal;
+	animation-fill-mode: backwards;
+    min-height: 700px;
+
+    .us{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+        margin: 0 0 50px;
+        width: 80vw;
+
+        .img{
+            width: 400px;
+            display: inline-block;
+            order: 10;
+            img{
+                width: 100%;
+            }
+        }
+
+        .description{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: stretch;
+            justify-content: center;
+            font-weight: 300;
+            margin: 25px;
+            text-align: left;
+            width: 450px;
+            order: 20;
+
+            h3{
+                font-size: 48px;
+                margin-bottom: 30px;
+            }
+
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+
+    .phrase{
+        text-align: center;
+        margin: 100px 20px 80px;
+        padding: 0 10px 15px;
+        border-bottom: 2px solid $color-gray-light;
+        span{
+            font-size: 48px;
+            font-weight: 400;
+            font-family: $font-logo;
         }
     }
 }
