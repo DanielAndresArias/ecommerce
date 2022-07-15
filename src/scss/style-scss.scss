@@ -164,13 +164,14 @@ body::-webkit-scrollbar-track {
 }
 
 .itemListContainer{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: baseline;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 4em;
     width: 1000px;
-    min-height: 80vh;
-    margin-bottom: 50px;
+    min-height: 1200px;
+    animation: fadeIn 1.5s ease-in 1.5s none normal;
+	animation-fill-mode: backwards;
 }
 
 .card{
@@ -181,9 +182,11 @@ body::-webkit-scrollbar-track {
     background-color: $color-white;
     transition: 0.75s, scale;
     border: 1px solid $color-gray-light;
+    box-shadow: 0px 10px 25px -5px $color-gray;
     a{
         line-height: 0;
         img{
+            height: 250px;
             width: 250px;
         }
     }
@@ -277,6 +280,7 @@ body::-webkit-scrollbar-track {
     flex-flow: column nowrap;
     align-items: center;
     background-color: $color-white-smooth;
+    padding-bottom: 100px;
 
     h1{
         margin: 50px 0 25px;
@@ -292,6 +296,8 @@ body::-webkit-scrollbar-track {
         display: flex;
         flex-flow: row nowrap;
         align-items: stretch;
+        justify-content: space-around;
+        width: 80vw;
     }
 }
 
@@ -300,8 +306,8 @@ body::-webkit-scrollbar-track {
     flex-flow: column nowrap;
     justify-content: baseline;
     background-color: $color-white;
-    margin: 20px 0 70px;
-    padding: 20px 30px;
+    margin: 20px 0 20px;
+    padding: 20px 30px 70px;
     border: 1px solid $color-gray-light;
     border-radius: 5px;
 
@@ -572,4 +578,13 @@ body::-webkit-scrollbar-track {
             color: $color-white-smooth;
         }
     }
+}
+
+@keyframes fadeIn {
+	from {
+		filter: opacity(0);
+	}
+	to{
+		filter: opacity(1);
+	}
 }

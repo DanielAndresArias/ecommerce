@@ -5,7 +5,7 @@ import ItemList from '../ItemList/ItemList';
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../services/firebase';
 
-const ItemListContainer = ({tipo}) => {
+const ItemListContainer = ({tipo, especial}) => {
 
     const [products, setProducts] = useState([]);
 
@@ -23,6 +23,22 @@ const ItemListContainer = ({tipo}) => {
             })
 
     }, [tipo]);
+
+    useEffect(() => {
+        
+        const collectionRef = especial ? (
+            query(collection(db, 'products'), where('especial', '==', especial)))
+            : (collection(db, 'products'))
+
+            especial &&
+            getDocs(collectionRef).then(response => {
+                const productsFormatted = response.docs.map(doc => {
+                    return { id: doc.id, ...doc.data() }
+                })
+                setProducts(productsFormatted);
+            })
+
+    }, [especial]);
 
     return(
         <section className="itemListContainer">
