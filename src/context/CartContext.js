@@ -49,7 +49,7 @@ export const CartProvider = ( {children} ) =>{
             }
         }
         else{
-            removeItem(prod);
+            removeItem(prod.id);
         }
     }
 

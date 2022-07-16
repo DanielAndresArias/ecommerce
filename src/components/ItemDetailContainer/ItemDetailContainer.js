@@ -1,5 +1,4 @@
 import '../../css/style.css';
-import { getProduct } from "../../asyncmock";
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';

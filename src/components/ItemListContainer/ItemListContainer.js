@@ -1,5 +1,4 @@
 import '../../css/style.css';
-import { getProducts } from "../../asyncmock";
 import React, { useState, useEffect } from "react";
 import ItemList from '../ItemList/ItemList';
 import { getDocs, collection, query, where } from 'firebase/firestore';

@@ -525,7 +525,7 @@ body{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    min-height: 600px;
 
     h1{
         text-align: center;
@@ -604,7 +604,6 @@ body{
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
     margin: 30vh 0;
 
     h1{
@@ -757,6 +756,7 @@ body{
     margin-top: 20px;
     padding: 5%;
     color: $color-mustard;
+    min-height: 600px;
 
     h2{
         font-size: 24px;
@@ -824,6 +824,65 @@ body{
         border-radius: 5px;
         span{
             color: $color-black;
+        }
+    }
+}
+
+.footer{
+    margin-top: 150px;
+    background-color: $color-black;
+	color: $color-white;
+    padding: 10px 50px 20px;
+
+    .div{
+        margin: 30px;
+        border-top: 1px solid $color-white;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .section{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            text-align: center;
+            margin: 15px 30px;
+
+            .p{
+                font-size: 16px;
+                font-weight: 100;
+            }
+    
+            .icons{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                .instagram{
+                    order: -40;
+                }
+
+                .whatsapp{
+                    order: -30;
+                }
+
+                .telegram{
+                    order: -20;
+                }
+
+                .correo-electronico{
+                    order: -10;
+                }
+    
+                .img{
+                    margin: 0 10px;
+    
+                    img{
+                        width: 24px;
+                    }
+                }
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-    const { cart, clearCart, getTotalPrice, totalQuantity } = useContext(CartContext);
+    const { cart, clearCart, getTotalPrice } = useContext(CartContext);
     
     const totalPrice = getTotalPrice();
 

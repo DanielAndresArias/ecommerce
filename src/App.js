@@ -1,5 +1,6 @@
 import './css/style.css';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Products from './components/Products/Products';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
@@ -24,6 +25,7 @@ function App() {
             <Route path='/ayuda' element={ <Help/> }/>
             <Route path='/checkout' element={ <Checkout/> }/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </CartProvider>
   );
